@@ -13,36 +13,36 @@ console.log(a < 2 ? '참' : '거짓')
 const str = 'Hello world!'
                012345678901
 
-console.log(str.length) - 문자의 길이를 반환 - 12
+console.log(str.length) // 문자의 길이를 반환 - 12
 
-console.log(str.includes('Hello', 0)) - 'Hello'가 포함되어있는지 확인(대소문자 구분) - true
-console.log(str.includes('Hello', 1)) - 'Hello'가 포함되어있는지 확인(대소문자 구분) - false (1부터 찾는 거. 맨앞에 H(0) 제외 했으니 없음)
+console.log(str.includes('Hello', 0)) // 'Hello'가 포함되어있는지 확인(대소문자 구분) - true
+console.log(str.includes('Hello', 1)) // 'Hello'가 포함되어있는지 확인(대소문자 구분) - false (1부터 찾는 거. 맨앞에 H(0) 제외 했으니 없음)
 
-console.log(str.indexOf('world')) - 6 //대상 문자에서 주어진 문자와 일치하는 첫 번째 인덱스(숫자)를 반환
-console.log(str.indexOf('Heropy')) - -1 //일치하는 문자가 없으면 '-1'을 반환
+console.log(str.indexOf('world')) // 6 대상 문자에서 주어진 문자와 일치하는 첫 번째 인덱스(숫자)를 반환
+console.log(str.indexOf('Heropy')) // 1 일치하는 문자가 없으면 '-1'을 반환
 
-console.log(str.padEnd(10, '0')) - 1234567000 // 대상 문자의 길이가 지정된 길이보다 작으면 주어진 문자를 지정된 길이까지 끝에 붙여
-console.log(str) - 1234567
+console.log(str.padEnd(10, '0')) // 1234567000 대상 문자의 길이가 지정된 길이보다 작으면 주어진 문자를 지정된 길이까지 끝에 붙여
+console.log(str) // 1234567
 
-console.log(str.padStart(10, '0')) - 0001234567 // End처럼, 뒤가 아닌 앞에 붙임
-console.log(str) - 1234567
+console.log(str.padStart(10, '0')) // 0001234567 End처럼, 뒤가 아닌 앞에 붙임
+console.log(str) // 1234567
 
 
 const str = 'Hello, Hello?!'
-console.log(str.replace('Hello'. 'Hi')) - Hi, Hello?! // 대상 문자에서 패턴과 일치하는 부분을 교체한 새로운 문자를 반환
-console.log(str.replace(/Hello/g, 'Hi')) - Hi, Hi?! // 슬래쉬 두개 사이에 정규표현식. g=global -> Hello 다 찾아서 바꿔라
-console.log(str) - Hello, Hello?!
+console.log(str.replace('Hello'. 'Hi')) // Hi, Hello?! 대상 문자에서 패턴과 일치하는 부분을 교체한 새로운 문자를 반환
+console.log(str.replace(/Hello/g, 'Hi')) // Hi, Hi?! 슬래쉬 두개 사이에 정규표현식. g=global -> Hello 다 찾아서 바꿔라
+console.log(str) // Hello, Hello?!
 
-console.log(str) - Hello world!
-console.log(str.slice(0, 5)) - Hello // 대상 문자의 일부를 추출해 새로운 문자를 반환 0~4
-console.log(str.slice(6, -1)) - world // 두 번째 인수 직전까지 추출하고, ( -1은 거꾸로 하는 방식. -1이가장 끝(!)
-console.log(str.slice(6)) - world! // 두 번째 인수를 생략하면 대상 문자의 끝까지 추출
+console.log(str) // Hello world!
+console.log(str.slice(0, 5)) // Hello 대상 문자의 일부를 추출해 새로운 문자를 반환 0~4
+console.log(str.slice(6, -1)) // world 두 번째 인수 직전까지 추출하고, ( -1은 거꾸로 하는 방식. -1이가장 끝(!)
+console.log(str.slice(6)) // world! 두 번째 인수를 생략하면 대상 문자의 끝까지 추출
 
 const str = 'Apple, Banana, Cherry'
-console.log(str.split(', ')) - (3) ['Apple', 'Banana', 'Cherry'] // 대상 문자를 주어진 구분자로 나눠 배열로 반환
+console.log(str.split(', ')) // (3) ['Apple', 'Banana', 'Cherry'] 대상 문자를 주어진 구분자로 나눠 배열로 반환
 // ','로로 하면 모양 이상해짐. ''로 하면 한자한자 다 나눔
-console.log(str.split(', ').reverse()) - (21) ['y', ~~~ ] reverse - 반대로 해줌.
-console.log(str.split(', ').reverse().join()) - yrrehC, ~~~ join - 다 합침
+console.log(str.split(', ').reverse()) // (21) ['y', ~~~ ] reverse - 반대로 해줌.
+console.log(str.split(', ').reverse().join()) // yrrehC, ~~~ join - 다 합침
 
 console.log(str.toLowerCase()) - apple, banana, cherry // 영어 소문자로 변환
 console.log(str.toUpperCase()) // 대문자로 변환
@@ -55,47 +55,47 @@ console.log(str.trim()) - Heropy! // 앞 뒤의 공백 제거. 사이는 제거�
 
 const num = 3.1415926535
 
-console.log(num.toFixed(2)) - 3.14 // 숫자를 지정된 고정 소수점 표기(자릿수)까지 표현하는 문자로 반환
-console.log(parseFloat(num.toFixed(2))) - 3.14 // toFixed는 문자이기 때문에 parseFloat으로 숫자로 변환
+console.log(num.toFixed(2)) // 3.14   숫자를 지정된 고정 소수점 표기(자릿수)까지 표현하는 문자로 반환
+console.log(parseFloat(num.toFixed(2))) // 3.14    toFixed는 문자이기 때문에 parseFloat으로 숫자로 변환
 
 
 const num = 1000000
 
-console.log(num.toLocalesString()) - 1,000,000 // 숫자를 현지 언어 형식의 문자로 변환
-console.log(`${num.toLocaleString()}원`) - 1,000,000원
+console.log(num.toLocalesString()) // 1,000,000   숫자를 현지 언어 형식의 문자로 변환
+console.log(`${num.toLocaleString()}원`) // 1,000,000원
 
 
 const num = 123
 const pi = 3.14
 
-console.log(Number.inInteger(num)) - true // 숫자가 정수인지 확인합니다
-console.log(Number.inInteger(pi)) - false
+console.log(Number.inInteger(num)) // true   숫자가 정수인지 확인합니다
+console.log(Number.inInteger(pi)) // false
 
-console.log(Number.inNaN(??))  NaN = true , 123, 'Hello', null = false //주어진 값이 'NaN인지 확인합니다. Not a Number
+console.log(Number.inNaN(??))  //  NaN = true , 123, 'Hello', null = false 주어진 값이 'NaN인지 확인합니다. Not a Number
 
 const str = '3.1415926535'
 const num = 3.1415926535
-console.log(Number.parseInt(str, 10)) - 3 // 주어진 값(숫자,문자)을 파싱해 특정 진수(radix)의 정수로 반환. 두번째 인수 10이 10진수 의미.
-console.log(Number.parseInt(str, 10)) - 3 // 문자데이터도 숫자데이터도 정수로 만들어주는 거임. Number 제외하고 작성해도 작동함.
+console.log(Number.parseInt(str, 10)) // 3   주어진 값(숫자,문자)을 파싱해 특정 진수(radix)의 정수로 반환. 두번째 인수 10이 10진수 의미.
+console.log(Number.parseInt(str, 10)) // 3   문자데이터도 숫자데이터도 정수로 만들어주는 거임. Number 제외하고 작성해도 작동함.
 
-console.log(Number.parseFloat(str)) - 3.1415926535 // 주어진 값을 파싱해 부동소수점 실수로 변환(숫자). Number 제외 가능
-console.log(parseFloat(num)) - 3.1415926535
+console.log(Number.parseFloat(str)) // 3.1415926535   주어진 값을 파싱해 부동소수점 실수로 변환(숫자). Number 제외 가능
+console.log(parseFloat(num)) // 3.1415926535
 
 
 수학 - Math 객체
 Number 자료형만 지원하며 BigInt와는 사용할 수 없다
 
-console.log(Math.abs(-2)) - 2 // 주어진 숫자의 절댓값을 반환
+console.log(Math.abs(-2)) // 2   주어진 숫자의 절댓값을 반환
 
-console.log(Math.ceil(3.1415926535)) - 4 // 올림
-console.log(Math.floor(3.1415926535)) - 3 // 내림
+console.log(Math.ceil(3.1415926535)) // 4  올림
+console.log(Math.floor(3.1415926535)) // 3  내림
 
-console.log(Math.max(1, 22, 38, 192)) - 192 // 가장 큰 숫자 반환
-console.log(Math.min(1, 22, 38, 192)) - 1 // 가장 작은 숫자 반환
+console.log(Math.max(1, 22, 38, 192)) // 192   가장 큰 숫자 반환
+console.log(Math.min(1, 22, 38, 192)) // 1   가장 작은 숫자 반환
 
-console.log(Math.pow(4, 2)) - 16 // 거듭제곱 4의 2승
-console.log(Math.pow(7, 2)) - 49 // 7의 2승
-console.log(Math.pow(10, 3)) - 1000 // 10의 3승
+console.log(Math.pow(4, 2)) // 16   거듭제곱 4의 2승
+console.log(Math.pow(7, 2)) // 49   7의 2승
+console.log(Math.pow(10, 3)) // 1000   10의 3승
 
 console.log(Math.random()) // 숫자 0 이상, 1미만의 난수를 반환
 
@@ -104,11 +104,11 @@ function random(min = 0, max = 10) {
   return Math.floor(Math.random() * (max - min)) + min
 }
 
-console.log(Math.random()) 0~10
-console.log(Math.random(11, 20)) 11~20
-console.log(Math.random(101, 999)) 101~999
+console.log(Math.random()) // 0~10
+console.log(Math.random(11, 20)) // 11~20
+console.log(Math.random(101, 999)) // 101~999
 
-console.log(Math.round(3.14)) - 3 // 반올림
+console.log(Math.round(3.14)) // 3 반올림
 
 
 날짜
@@ -117,13 +117,13 @@ const date = new Date()
 console.log(date) // 타임스탬프 = 'Wed Sep 28 2022 10:45:41 GMT+0900 (한국 표준시)'
 
 const d1 = new Date(2022, 11, 16, 12, 57, 30)
-console.log(d1) - Fri Dec 16 2022 12:57:30 ..... - 해당 날짜 표시
-console.log(d1.getFullYear()) - 2022 - 날짜만 반환
+console.log(d1) // Fri Dec 16 2022 12:57:30 ..... - 해당 날짜 표시
+console.log(d1.getFullYear()) // 2022 - 날짜만 반환
 
-console.log(date.getFullYear()) - 2022
+console.log(date.getFullYear()) // 2022
 date.setFullYear(2023)
-console.log(date.getFullYear()) - 2023
-console.log(date) - 2023 기준 타임스탬프
+console.log(date.getFullYear()) // 2023
+console.log(date) // 2023 기준 타임스탬프
 
 .getMonth .setMonth // '월' 0부터 시작 (제로베이스드)
 .getDate .setDate // '일'
@@ -151,30 +151,30 @@ function getDayKo(day) {
 }
 
 .getTime() .setTime() // 유닉스타임 밀리초 반환
-console.log(dat)getTime()) - 1666435783 어쩌고 나옴
-date.setTime(17000000) - 유닉스 타임 임의로 지정하는 거
+console.log(dat)getTime()) // 1666435783 어쩌고 나옴
+date.setTime(17000000) // 유닉스 타임 임의로 지정하는 거
 
 Date.now() // 유닉스타임부터 밀리초 반환
 
 
 배열 array
 
-console.log(arr.legth) - 배열데이터 길이(몇개있냐)
+console.log(arr.legth) // 배열데이터 길이(몇개있냐)
 
 console.log(arr[0])
 console.log(arr.at[0]) // 0번째 배열. 음수(-1부터) 입력하면 뒤에서부터 인덱싱
 
-const arr3 = arr1.concat(arr2) - [ A, B, C, D, E, F ] // 배열 병합
+const arr3 = arr1.concat(arr2) // [ A, B, C, D, E, F ] // 배열 병합
 const arr3 = [...arr1, ...arr2] // 전개연산자로도 가능
 
-const isValid = arr.every(item => item < 5) - true // 대상 배열의 모든 요소가 콜백 테스트에서 참을 반환하는지 확인
+const isValid = arr.every(item => item < 5) // true   대상 배열의 모든 요소가 콜백 테스트에서 참을 반환하는지 확인
 console.log(isValid) - // arr는 1,2,3,4 로 정의했음. 즉 <5니까 트루 맞음.
 
 const filteredNumbers = numbers.filter(number => number <30) // 배열 numbers를 콜백테스트. <30이 true인 값들만 필터해서 반환
 
 const foundItem = arr.find(item => item > 10) // .find() 콜백 테스트를 통과하는 첫 번째 요소를 반환. (크기순이 아니라 배열순)
 
-const index = arr.findIndex(item => item > 10 // 대상 배열에서 콜백 테스트를 통과하는 첫 번째 요소의 인덱스를 반환
+const index = arr.findIndex(item => item > 10) // 대상 배열에서 콜백 테스트를 통과하는 첫 번째 요소의 인덱스를 반환
 console.log(index) // 2(번째)
 
 const arr = [1, 2, [3, 4]]
@@ -186,19 +186,19 @@ for (let i = 0; i < arr.length; i +=1) {
   console.log(arr[i])
 } // A B C 순서대로 한 번씩 출력. A B C 3개니까 3번 반복하는 for 반복문. forEach가 더 단순.
 
-console.log(arr.includes(2)) - true // 대상 배열이 특정 요소를 포함하고 있는지 확인. 2 들어있으면 true. 참조형은 다름. name age 이런 거 묶음
+console.log(arr.includes(2)) // true   대상 배열이 특정 요소를 포함하고 있는지 확인. 2 들어있으면 true. 참조형은 다름. name age 이런 거 묶음
 
 console.log(arr.join()) // 대상 배열의 모든 요소를 구분자로 연결한 문자를 반환. () 안에 , / 등 넣어서 사용. 공백일시 ,
 
 const numbers = [1, 2, 3, 4]
 const newNumbers = numbers.map(item => item *2) // 대상 배열의 길이만큼 주어진 콜백을 실행, 콜백의 반환 값을 모아 새로운 배열을 반환
-console.log(newNumbers) - [2, 4, 6, 8]
+console.log(newNumbers) // [2, 4, 6, 8]
 
-console.log(numbers.pop()) - [1, 2, 3] // 배열의 마지막 요소를 제거하고 반환. 원본이 변경됨.
+console.log(numbers.pop()) // [1, 2, 3] // 배열의 마지막 요소를 제거하고 반환. 원본이 변경됨.
 
-console.log(numbers.push('넣을거')) - [1, 2, 3, '넣을거'] // 마지막에 하나 이상의 요소를 추가. 새로운 길이를 반환. 원본 변경. 여러개 가능.
+console.log(numbers.push('넣을거')) // [1, 2, 3, '넣을거'] // 마지막에 하나 이상의 요소를 추가. 새로운 길이를 반환. 원본 변경. 여러개 가능.
 
-const numbers - [1, 2, 3]
+const numbers // [1, 2, 3]
 const sum = numbers.reduce((accumulator, currentValue) => {    // .reduce() 길이만큼 주어진 콜백 실행. 마지막 값 반환.
   return accumulator + currentValue                                  // 각 콜백의 반환값은 다음 콜백으로 전달. (0+1 -> accumulator)
 }, 0}                                                                      // 0=초기값 -> accumulator , 1 -> currentValue
@@ -233,18 +233,18 @@ console.log(arr.slice(4)) - E, F, G
 
 const arr = [1, 2, 3, 4] //.some() - 대상 배열의 어떤 요소라도 콜백 테스트를 통과하는지 확인
 const isValid = arr.some(item => item > 3)
-console.log(isValide) - true // 배열에서 하나라도 통과하면 true 나온다는 거. 다 통과 못해야 false 나옴.
+console.log(isValide) // true   배열에서 하나라도 통과하면 true 나온다는 거. 다 통과 못해야 false 나옴.
 
 const numbers = [4, 17, 2, 103, 3, 1, 0] // .sort() 대상 배열을 콜백의 반환값(음수 양수 0)에 따라 정렬. 원본 변경.
 
 numbers.sort() 	// 콜백 제공하지 않으면 문자열로 변환하고 유니코드 코드 포인트 순서로 정렬
-console.log(numbers) - [0, 1, 103, 17, 2, 3, 4]
+console.log(numbers) // [0, 1, 103, 17, 2, 3, 4]
 
 numbers.sort((a, b) => a - b)
-console.log(numbers) - [0, 1, 2, 3, 4, 17, 103] // 양수 - 작은 값부터
+console.log(numbers) // [0, 1, 2, 3, 4, 17, 103] // 양수 - 작은 값부터
 
 numbers.sort((a, b) => b - a )
-console.log(numbers) - [103, 17, 4, 3, 2, 1, 0] // 음수 - 큰 값부터
+console.log(numbers) // [103, 17, 4, 3, 2, 1, 0] // 음수 - 큰 값부터
 
 const users = [
   { name: 'Neo', age: 85 },
@@ -343,7 +343,7 @@ console.log(JSON.parse('[1,2,3]'))			// (3) [1, 2, 3]
 
 // 모듈(Module)이란 특정 데이터들의 집합(파일). 가져오기 Import, 내보내기 Export
 
-export const hello = 'Hello world!' 	// midule.js 에서 내보내고
+export const hello = 'Hello world!' 	// module.js 에서 내보내고
 import { hello } from './module.js'
 console.log(hello) 			// 'Hello world!' 출력
 
@@ -358,10 +358,428 @@ export const str = 'ABC'		// str이란 이름으로 내보냄
 export const arr = []		// 배열
 export const hello = () => {}		// 함수
 
-import number, { str, arr, hello } from '.module.js'
+import number, { str, arr, hello } from '.module.js'	// str as xyz 하면 xyz로 이름 바꿈. 그럼 xyz만 사용가능.
 console.log(str)			// ABC
 console.log(arr)			// []
 console.log(hello)			// f hello() {}
 
+import * as abc from '.module.js'
+console.log(abc) // 모듈의 모든 내용을 abc라는 이름으로 사용. * 와일드카드 문자라고 함 (전체, 모든것을 의미)
 
+
+// 동적으로 모듈 가져오기
+
+setTimeout(() => {
+  import('.module.js').then((abc) => {		// import 키워드 코드는 js 최상단에서만 사용 가능해서 이렇게 하는 거.
+    console.log(abc)
+  })
+}, 1000)				// 1초 뒤에 불러와서 출력
+
+setTimeout(() => {
+  const abc = await import('./module.js')	// 비동기에서 배울 거래
+  console.log(abc)
+}, 1000)
+
+
+
+export const a = () => 123		//a.js
+export const b = () => 456		//b.js
+import { a } from './a.js'		//main.js
+import { b } from './b.js'
+
+console.log(a())			// 123
+console.log(b())			// 456
+
+// 이거를
+export { a } from './a.js'		// util.js
+export { b } from './b.js'
+
+import { a, b } from '.util.js'		// main.js 따로 따로 돼있는 애들 이런식으로 사용 가능.
+
+
+
+
+// 동기(Synchroniys) : 순차적으로 코드 실행
+// 비동기(Asynchronous) : 순차적으로 코드 실행 X
+
+console.log(1)			// 1
+setTimeout(() => {console.log(2) }, 1000)
+console.log(3)			// 3
+				// 1초 뒤 2 출력
+
+
+const btnEl = document.querySelector('h1')
+btnEl.addEventListner('click', () => {
+  console.log('Clicked!')
+})
+console.log('Hello World!')		// Hello World! 출력되고. h1 클릭하면 그 때야 Clicked! 출력.
+
+
+fetch('http://www.omdbapi.com/?apikey=7035c60c&s=frozen')
+  .then(res => res.json())
+  .then(res => console.log(res))
+console.log(1)
+console.log(2)			// 콘솔 로그 1,2 먼저 출력 돼고 fetch가 나중에 출력됨
+
+
+// 콜백 Callback 콜백과 콜백 지옥 - 따로 복습할 것
+
+const a = () => console.log(1)
+const b = () => console.log(2)
+a()					// 1
+b()					// 2 - 1과 2가 나오는 이 순서는 변하지 않음
+
+const a = () => {
+  setTimeout(() => {
+    console.log(1)
+  }, 1000)
+}
+const b = () => console.log(2)
+
+a()
+b()					// 셋 타임아웃에 의해 2 1 순으로 출력.
+
+// 콜백으로 이런 비동기에서도 1부터 출력되게 만들 수 있음
+
+const a = (callback) => {
+setTimeout(() => {
+    console.log(1)
+    callback()
+  }, 1000)
+}
+const b = () => console.log(2)
+
+a(() => {
+  b()
+})		// 1 2 순으로 출력 됨.
+
+
+const a = (callback) => {
+setTimeout(() => {
+    console.log(1)
+    callback()
+  }, 1000)
+}
+const b = (callback) => {
+  setTimeout(() => {
+    console.log(2)
+    callback()
+  }, 1000)
+}
+const c = () => console.log(3)
+
+a(() => {
+  b(() => {
+    c()
+  })
+})			// 1 2 3 순으로 출력 됨. 콜백에 콜백
+
+
+const getMovies = (movieName, callback) => {
+  fetch(`https://www.omdbapi.com/?apikey=7035c60c&s=${movieName}`}
+    .then(res => res.json())
+    .then(res => {
+      console.log(res)
+      callback()
+    })
+}
+
+getMoives('frozen', () => {
+  console.log('겨울왕국!')
+})
+getMovies('avengers', () => {
+  console.log('어벤져스!')
+})
+getMovies('avatar', () => {
+  console.log('아바타')
+})				// 순서대로 호출되지 않음. 서버 요청, 응답 속도가 달라서 누가 먼저 올지 장담 불가능.
+
+
+getMoives('frozen', () => {
+  console.log('겨울왕국!')
+  getMovies('avengers', () => {
+    console.log('어벤져스!')
+    getMovies('avatar', () => {
+      console.log('아바타')
+    })
+  })	
+})				// 콜백 패턴을 이용해 순서를 보장할 수 있음. 콜백 지옥으로 인해 더러워지는 단점 있음.
+				// 그래서 Promise 로 편리하게 관리할 수 있음
+
+
+// Promise
+
+const a = callback => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      console.log(1)
+      resolve()
+    }, 1000)
+  })
+}
+const b = () => console.log(2)
+
+// a().then(() => {}) 여기 함수가 resolve로 감
+a().then(() => { b() })
+
+
+
+const a = callback => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      console.log(1)
+      resolve()
+    }, 1000)
+  })
+}
+const b = callback => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      console.log(2)
+      resolve()
+    }, 1000)
+  })
+}
+const c = callback => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      console.log(3)
+      resolve()
+    }, 1000)
+  })
+}
+const d = () => console.log(4)
+
+a().then(() => {
+  b().then(() => {
+    c().then(() => { d() })
+  })
+})			// 이렇게 해도 되긴 하는데 콜백 지옥이랑 다를바가 없음. .then 메소드 체이닝으로 또 쓸 수 있음.
+
+a().then(() => {
+  return b()
+}).then(() => {
+  return c()
+}).then(() => {
+ d()
+})				// 이런식으로 가능. 그런데 화살표 함수에서 중괄호와 return 생략 가능
+
+a()
+  .then(() => b())
+  .then(() => c())
+  .then(() => {
+    d()
+   })				// 정리
+
+a()
+  .then(b)
+  .then(c)
+  .then(d)
+  .then(() => console.log('done'))	// 최종
+
+
+const getMovies = (movieName, callback) => {
+  return new Promise(resolve => {
+    fetch(`https://www.omdbapi.com/?apikey=7035c60c&s=${movieName}`}
+      .then(res => res.json())
+      .then(res => {
+        console.log(res)
+        resolve()
+    })
+  })
+}
+
+getMoives('frozen', () => {
+  console.log('겨울왕국!')
+  getMovies('avengers', () => {
+    console.log('어벤져스!')
+    getMovies('avatar', () => {
+      console.log('아바타')
+    })
+  })	
+})
+
+getMoives('frozen')
+  .then(() => {
+    console.log('겨울왕국!')
+    return getMovies('avengers')
+  })
+  .then(() => {
+    console.log('어벤져스!')
+    return getMovies('avatar')
+  })
+  .then(() => {
+    console.log('아바타')
+  })				// 이렇게 작성 가능
+
+
+// Asynce / Await
+
+const a = () => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      console.log(1)
+      resolve()
+    }, 1000)
+  })
+}
+const b = () => console.log(2)
+
+// a().then(() => b())
+
+await a()		// await 는 뒤 쪽의 비동기 함수의 실행을 기다린다는 의미. "Promise 인스턴스가 반환이 되어야지만 앞에 사용 가능"
+b()		// a()호출을 기다렸다가 b()를 호출한다.
+		// 그리고 await는 async라는 키워드로 감싸야지만 사용 가능해서 아래처럼 정리해야함
+
+const wrap = async () => {
+  await a()
+  b()
+}
+wrap()
+
+
+const getMovies = (movieName, callback) => {
+  return new Promise(resolve => {
+    fetch(`https://www.omdbapi.com/?apikey=7035c60c&s=${movieName}`}
+      .then(res => res.json())
+      .then(res => {
+        console.log(res)
+        resolve()
+    })
+  })
+}
+
+getMoives('frozen')
+  .then(() => {
+    console.log('겨울왕국!')
+    return getMovies('avengers')
+  })
+  .then(() => {
+    console.log('어벤져스!')
+    return getMovies('avatar')
+  })
+  .then(() => {
+    console.log('아바타')
+  })			// 얘네가
+
+const wrap = async () => {
+  await getMovies('frozen')
+  console.log('겨울왕국!')
+  await getMovies('avengers')
+  console.log('어벤져스!')
+  await getMovies('aveatar')
+  console.log('아바타!')
+}
+wrap()
+
+
+
+// Resolve, Reject 그리고 에러 핸들링
+
+consat delayAdd = (index, cb, errorCb) =? {
+  setTimeout(() => {
+    if (index > 10) {
+      errorCb(`${index}는 10보다 클 수 없습니다.`)
+      return
+    }
+    console.log(index)
+    cb(index + 1)
+  }, 1000)
+}
+
+delayAdd(
+  4,				// 10 이상의 수를 넣으면 "숫자 는 10보다 클 수 없습니다" 라는 에러 출력
+  res => console.log(res),
+  err => console.error(err)
+)				// 4 5 순서대로 출력
+
+
+// 위 코드를 resolve, reject를 이용해 아래처럼 바꿀 수 있음.
+consat delayAdd = index =? {
+  return new Promise((resolve, reject) => {			// resolve 는 정상적으로 동작될 cb, .reject는 비정상 errorCb로 배치
+    setTimeout(() => {
+      if (index > 10) {
+        reject(`${index}는 10보다 클 수 없습니다.`)
+        return
+      }
+      console.log(index)
+      resolve(index + 1)
+    }, 1000)
+  })
+}
+
+delayAdd(13)
+  .then(res => console.log(res))
+  .catch(err => console.error(err))
+  .finally(() => console.log('Done!'))				// finally는 앞 두개랑 상관 없이 항상 실행될 수 있음.
+
+//DelayAdd를 async await를 활용해서 바꾸기. try catch 구문을 사용.
+const wrap = async () => {
+  try {
+    const res = await delayAdd(2)
+    console.log(res)
+  } catch (err) {
+    console.error(err)
+  } finally {
+    console.log('Done!')
+  }
+}
+wrap()
+
+
+// Resolve, Reject 그리고 에러 핸들링 2
+
+const getMovies = movieName => {
+  return new Promise((resolve, reject) => {
+    fetch(`https:.//www.omdbapi.com/?apikey=7035c60c&s=${movieName}`)
+      .then(res => res.json())
+      .then(json => {
+        if (json.Response === 'False') {
+          reject(json.Error)
+        }
+        resolve(json)
+      })
+      .catch(error => {
+        reject(error)
+      })
+  })
+}
+let loading = true
+
+// .then()
+getMovies('avengers')
+  .then(movies => console.log('영화 목록:', movies))
+  .catch(error => console.log('에러 발생:', error))
+  .finally(() => loading = false)
+
+// async/await
+const wrap = async () => {
+  try {
+    const movies = await getMovies('avengers')
+    console.log('영화 목록:', movies)
+  } catch (error) {
+    console.log('에러 발생:', error)
+  } finally {
+    loading = false
+  }
+}
+wrap()
+
+
+// 반복문에서 비동기 처리
+
+const getMovies = movieName => {
+  return new Promise(resolve => {
+    fetch)`https://www.omdbapi.com/?apikey=7035c60c&s${movieName}`)
+      .then(res => res.json())
+      .then(res => resolve(res))
+  })
+}
+
+const titles = ['frozen', 'avengers', 'avatar']
+
+titles.forEach(async title => {
+  const movies = await getMovies(title)
+  console.log(title, movies)
+})
 
