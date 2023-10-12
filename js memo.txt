@@ -823,10 +823,10 @@ wrap()
 // Ch 09. DOM
 // DOM(Document Object Model) HTML 문서를 객체로 표현한 것. JS에서 HTML을 제어할 수 있게 해줌.
 
-const elemenet = document.querySelector('h1')
-console.log(elemenet.textContent)			// HTML h1에서 찾은 'Hello World'가 콘솔에 출력
+const element = document.querySelector('h1')
+console.log(element.textContent)			// HTML h1에서 찾은 'Hello World'가 콘솔에 출력
 
-// Nde vs Elemenet
+// Nde vs Element
 
 // - 노드(Node) : HTML 요소, 텍스트, 주석 등 모든 것을 의미
 // - 요소(Element) : HTML 요소를 의미. 노드가 엘리먼트의 상위 개념이란 것만 기억하면 됨.
@@ -886,10 +886,10 @@ nodeList.forEach(el => console.log(el.textContent))		// 각각의 child 클래�
 
 console.log(Array.from(nodeList).reverse())			// child2 가 먼저 확인됨. Array.from을 통해 배열 데이터로 만들고 reverse로 뒤집음.
 
-// N.parentElemenet - Node 노드의 부모 요소를 반환
+// N.parentElement - Node 노드의 부모 요소를 반환
 
 const el = documnet.querySelector('.child')
-console.log(el.parentElemenet)				// <div class="parent">...</div> 패런트 클래스 가진 div 자체가 나옴
+console.log(el.parentElement)				// <div class="parent">...</div> 패런트 클래스 가진 div 자체가 나옴
 
 // E.closest() - 자신을 포함한 조상 요소 중 css 선택자와 일치하는 가장 가까운 요소 반환.
 
@@ -912,5 +912,142 @@ console.log(el.previousElementSibling)		// null
 console.log(el.nextElementSibling)			// <div id="child2" class="child">2</dib>
 
 
+// E.children - 요소의 모든 자식 요소를 반환
 
+const el = document.querySelector('.parent')
+consoel.log(el.children)			// HTMLCollection(2) [div.child, div#child2.child, child2: div#child2.child]
+
+console.log(Array.from(el.children))
+
+// E.firstElementChiild / E.lastElementChild - 요소의 첫, 마지막 자식 요소를 반환
+
+const el = documentquerySelector('.parent')
+console.log(el.firstElementChild)		// <div class="child">1</div>
+console.log(el.lastElementChild)		// <div id="child2" class="child2">2</div>
+
+
+// 03. 생성,조회,수정 1
+
+<body>
+  <div class="parent">
+    div class="child">1</div>
+    div class="child">2</div>
+  </div>
+</body>
+
+// document.createElement() - 메모리에만 존재하는 새로은 HTML 요소를 생성해 반환
+
+const divEl = document.createElement('div')
+console.log(divEl)				// <div></div>
+
+const divEl = document.creatElement('input')
+console/log(inputEl)			// <input>
+
+// E.prepend() / E.append() - 노드를 요소의 첫 번째 / 마지막 자식으로 삽입 + 인수를 하나 이상 여러개 사용 가능. 순서대로.
+
+const parentEl = document.querySelector('.parent')
+
+const el = document.createElement('div')
+el.textContent = 'Hello~'
+
+parentEl.prepend(new Comment(' 주석 '))	// <!-- 주석 --> div 위에 뜸
+parentEl.appen(el)				// <div>Hello</div> 가 차일드2 아래 뜸
+parentEl.appen('Text!')			// "Text!" 맨 아래에 뜸
+parentEl.appen(el, 'Text!')			// 인수 하나 이상 여러개 사용 가능. 순서대로.
+
+// E.remove() 요소를 제거
+
+const el = document.querySelector('.child')
+el.remove				// 제일 먼저 찾아진 child 요소 제거. 즉 위에 <div class="child">1</div> 얘 사라짐
+
+// E.insertAdjacentElement() '대상 요소'의 지정한 위치에 '새로운 요소'를 삽입
+// 대상_요소.insertAdjacentElement(위치, 새로운_요소)
+
+/* html */ `
+<!-- 'beforebegin' -->
+<div class="target">
+  <!-- 'afterbegin' -->
+  Content!
+  <!-- 'beforeend' -->
+</div>
+<!-- 'afterend' -->`
+
+const childEl = document.querySelector('child')
+const newEl = document.createElement('span')
+newEl.textContent = 'Hello~'
+
+childEl.insertAdjacentElement('beforebegin', newEl)	// child의 beforebegin에 'Hello~' span 삽입
+
+// N.insertBefore() '부모 노드'의 자식인 '참조 노드'의 이전 형제로 '노드'를 삽입
+// 부모_노드.insertBefore(노드, 참조_노드)
+
+const parentEl = document.querySelector('.parent')
+const childEl = document.querySelector('.child')
+const newEl = document.createElement('span')
+newEl.textContent = 'Hello~'
+
+parentEl.insertBefore(newEl, childEl)			// <div class="child">1</div> 위에 <span>Hello~</span> 삽입
+// paerent 요소 내의 child 요소의 이전에 newEl을 삽입
+
+// N.contains() '주어진 노드'가 '노드'의 (자신을 포함해서) 후손인지 확인
+// 노드.contains(주어진_노드)
+
+const parentEl = document.querySelector(',parent')
+const childEl = document.querySelector('.child')
+
+console.log(parentEl.contains(childEl)) // true
+console.log(document.body.contains(parentEl)) // true
+console.log(document.body.contains(childEl)) // true
+console.log(document.body.contains(document.body) // true
+console.log(parentEl.contains(parentEl))  // true
+console.log(parentEl.contains(document.body)) // false
+console.log(childEl.contains(document.body))  /false
+
+// N.textContent 노드의 모든 텍스트를 얻거나 변경
+
+const el = document.querySelector('child')
+console.log(el.textContent)			// 1
+
+el.textContent = '7'
+console.log(el.textContent)					// 7로 바뀌어있음. html에서도 7로 바뀌어있음.
+
+// E.innerHTML 요소의 모든 HTML 내용을 하나의 문자로 얻거나, 새로운 HTML을 지정
+
+const el = document.querySelector(',parent')
+console.log(el.innerHTML)					// <div class="child">두놈 다 문자로 반환됨
+
+el.innerHTML = '<span style="color: red;">Hello~</span>' 	// div child 두놈 사라지고 이놈이 들어감. 화면에는 css 설정 적용돼서 빨간 Hello~ 출력
+
+el.innerHTML = /* html */ `					// ``을 사용해서 템플릿 리터럴 사용해서 복잡한 구조의 html을 삽입
+<div style="border:4px solid;">
+  <span style="color: red;">Hello~</span>
+  <span style="color: red;">Hello~</span>
+</div>`
+
+
+// 생성, 조회, 수정 2
+
+// E.dataset 요소의 각 `data-` 속성 값을 얻거나 지정 ?
+
+const el = document.querySelector('child')
+const str = 'Hello world!'
+const obj = { a: 1, b: 2 }
+
+el.dataset.helloWorld = str
+el.dataset.object = JSON.stringify(obj)
+
+console.log(el.dataset.helloWorld)
+console.log(el.dataset.object)
+console.log(JSON.parse(el.dataset.object))	// 얘로 문자화된 object 데이터셋을 사용함
+
+// E.tagName 요소의 태그 이름을 반환
+
+const parentEl = document.querySelector('.parent')
+const childEl = document.querySelector('.child')
+const el = document.createElemenet('span')
+
+console.log(parentEl.tagName)
+console.log(childEl.tagName)
+console.log(el.tagName)
+console.log(document.body.tagName)
 
